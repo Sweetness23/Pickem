@@ -1,13 +1,13 @@
 package com.koenig.projects.domain;
 
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 public class Pick {
 
 	private String name;
 	private String team;
 	private Integer id;
-	private LocalDate date;
+	private ZonedDateTime date;
 	
 	public Pick(String name, String team) {
 		this.name = name;
@@ -38,10 +38,10 @@ public class Pick {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public LocalDate getDate() {
+	public ZonedDateTime getDate() {
 		return date;
 	}
-	public void setDate(LocalDate date) {
+	public void setDate(ZonedDateTime date) {
 		this.date = date;
 	}
 }

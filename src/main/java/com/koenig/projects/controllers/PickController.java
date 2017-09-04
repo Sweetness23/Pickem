@@ -1,6 +1,8 @@
 package com.koenig.projects.controllers;
 
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -29,7 +31,8 @@ public class PickController {
     public String greetingSubmit(@ModelAttribute Pick pick) {
     	String hash = pick.getName() + pick.getTeam();
     	pick.setId(hash.hashCode());
-    	pick.setDate(LocalDate.now());
+    	ZonedDateTime b = ZonedDateTime.now(ZoneId.of("America/Chicago"));
+    	pick.setDate(b);
     	pickRepo.save(pick);
         return "redirect:thank";
     }
