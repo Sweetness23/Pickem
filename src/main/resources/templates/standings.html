@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Standings</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Standings</h1>
+	<table>
+		<tr th:each="row : ${rows}">
+			<td th:text="${row.name}"></td>
+			<td th:each="team : ${row.teams}">
+				<span th:text="${team}"></span>
+			</td>
+			<td th:text="${row.points}"></td>
+		</tr>
+	</table>
+</body>
+</html>
