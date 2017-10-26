@@ -21,4 +21,8 @@ public class HomeController {
         return "Greetings from Spring Boot!";
     }
 
+    @RequestMapping("/")
+    public String root() {
+	return "redirect:/standings";    
+    }
 }
