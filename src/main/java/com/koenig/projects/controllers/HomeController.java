@@ -23,6 +23,6 @@ public class HomeController {
 
     @RequestMapping("/")
     public String root() {
-	return "redirect:/standings";    
+	return "standings";    
     }
 }
