@@ -1,7 +1,12 @@
+C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\controllers\PastController.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\domain\Pick.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\repo\PickRepository.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\controllers\HomeController.java
+C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\domain\StandingsRow.java
+C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\controllers\ThankController.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\domain\Standings.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\controllers\PickController.java
+C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\controllers\StandingsController.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\PickemApplication.java
 C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\repo\StandingsRepository.java
+C:\Users\koenigjoey\Documents\workspace-sts-3.9.0.RELEASE\Pickem\src\main\java\com\koenig\projects\config\AppConfig.java

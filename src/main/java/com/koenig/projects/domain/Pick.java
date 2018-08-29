@@ -6,6 +6,8 @@ public class Pick {
 
 	private String name;
 	private String team;
+	private String email;
+	private String week;
 	private Integer id;
 	private ZonedDateTime date;
 	
@@ -43,5 +45,17 @@ public class Pick {
 	}
 	public void setDate(ZonedDateTime date) {
 		this.date = date;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getWeek() {
+		return week;
+	}
+	public void setWeek(String week) {
+		this.week = week;
 	}
 }
