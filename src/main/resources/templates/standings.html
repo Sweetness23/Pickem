@@ -21,16 +21,17 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<h1>Standings</h1>
-	<table>
-		<tr th:each="row : ${rows}">
-			<td th:text="${row.name}"></td>
-			<td th:each="team : ${row.teams}">
-				<span th:text="${team}"></span>
-			</td>
-			<td th:text="${row.points}"></td>
-		</tr>
-	</table>
-	<p><a href="/submission">Make a Pick</a></p>
+	<div class="container-fluid">
+		<h1>Standings</h1>
+		<table>
+			<tr th:each="row : ${rows}">
+				<td th:text="${row.name}"></td>
+				<td th:each="team : ${row.teams}">
+					<span th:text="${team}"></span>
+				</td>
+				<td th:text="${row.points}"></td>
+			</tr>
+		</table>
+	</div>
 </body>
 </html>
