@@ -21,32 +21,33 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <div class="container-fluid">
 	<h1>Submit your picks here</h1>
-    <form method="post" th:object="${pick}">
-    	<p>Name <input type="text" th:field="*{name}" />
-    	Email <input type="text" th:field="*{email}" /></p>
-        <p>Losing Team <input type="text" th:field="*{team}" /></p>
-        <p>Week: <select th:field="*{week}">
-    		<option th:value="'1'" th:text="1"></option>
-    		<option th:value="'2'" th:text="2"></option>
-    		<option th:value="'1'" th:text="3"></option>
-    		<option th:value="'2'" th:text="4"></option>
-    		<option th:value="'1'" th:text="5"></option>
-    		<option th:value="'2'" th:text="6"></option>
-    		<option th:value="'1'" th:text="7"></option>
-    		<option th:value="'2'" th:text="8"></option>
-    		<option th:value="'1'" th:text="9"></option>
-    		<option th:value="'2'" th:text="10"></option>
-    		<option th:value="'1'" th:text="11"></option>
-    		<option th:value="'2'" th:text="12"></option>
-    		<option th:value="'1'" th:text="13"></option>
-    		<option th:value="'2'" th:text="14"></option>
-    		<option th:value="'1'" th:text="15"></option>
-    		<option th:value="'2'" th:text="16"></option>
-    		<option th:value="'1'" th:text="17"></option>
-		</select></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-    </form>
-    <p><a href="/standings">Standings</a></p>
+	    <form method="post" th:object="${pick}">
+		<p>Name <input type="text" th:field="*{name}" />
+		Email <input type="text" th:field="*{email}" /></p>
+		<p>Losing Team <input type="text" th:field="*{team}" /></p>
+		<p>Week: <select th:field="*{week}">
+			<option th:value="'1'" th:text="1"></option>
+			<option th:value="'2'" th:text="2"></option>
+			<option th:value="'1'" th:text="3"></option>
+			<option th:value="'2'" th:text="4"></option>
+			<option th:value="'1'" th:text="5"></option>
+			<option th:value="'2'" th:text="6"></option>
+			<option th:value="'1'" th:text="7"></option>
+			<option th:value="'2'" th:text="8"></option>
+			<option th:value="'1'" th:text="9"></option>
+			<option th:value="'2'" th:text="10"></option>
+			<option th:value="'1'" th:text="11"></option>
+			<option th:value="'2'" th:text="12"></option>
+			<option th:value="'1'" th:text="13"></option>
+			<option th:value="'2'" th:text="14"></option>
+			<option th:value="'1'" th:text="15"></option>
+			<option th:value="'2'" th:text="16"></option>
+			<option th:value="'1'" th:text="17"></option>
+			</select></p>
+		<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+	    </form>
+     </div>
 </body>
 </html>
