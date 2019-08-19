@@ -6,8 +6,8 @@
       <a class="navbar-brand" href="/">Loser Pool</a>
     </div>
     <ul class="nav navbar-nav">
-      <li><a href="/">Home</a></li>
-      <li class="active"><a href="/submission">Submit</a></li>
+      <li class="active"><a href="/">Home</a></li>
+      <li><a href="/submission">Submit</a></li>
       <li><a href="/standings">Standings</a></li>
       <li><a href="/past">Past Champions</a></li>
     </ul>
@@ -21,33 +21,70 @@
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
 	<h1>Submit your picks here</h1>
-	    <form method="post" th:object="${pick}">
-		<p>Name <input type="text" th:field="*{name}" />
-		Email <input type="text" th:field="*{email}" /></p>
-		<p>Losing Team <input type="text" th:field="*{team}" /></p>
-		<p>Week: <select th:field="*{week}">
-			<option th:value="'1'" th:text="1"></option>
-			<option th:value="'2'" th:text="2"></option>
-			<option th:value="'3'" th:text="3"></option>
-			<option th:value="'4'" th:text="4"></option>
-			<option th:value="'5'" th:text="5"></option>
-			<option th:value="'6'" th:text="6"></option>
-			<option th:value="'7'" th:text="7"></option>
-			<option th:value="'8'" th:text="8"></option>
-			<option th:value="'9'" th:text="9"></option>
-			<option th:value="'10'" th:text="10"></option>
-			<option th:value="'11'" th:text="11"></option>
-			<option th:value="'12'" th:text="12"></option>
-			<option th:value="'13'" th:text="13"></option>
-			<option th:value="'14'" th:text="14"></option>
-			<option th:value="'15'" th:text="15"></option>
-			<option th:value="'16'" th:text="16"></option>
-			<option th:value="'17'" th:text="17"></option>
-			</select></p>
-		<p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
-	    </form>
-     </div>
+    <form method="post" th:object="${pick}">
+    	<p>Name <select th:field="*{userId}" class="form-control">
+             <option th:each="user : ${userList}"
+                             th:value="${user.id}"
+                             th:text="${user.name}" />
+         		</select>
+    	</p>
+    	
+        <p>Losing Team <select th:field="*{team}" class="form-control">
+    		<option th:value="'ARI'" th:text="'Arizona Cardinals'"></option>
+    		<option th:value="'ATL'" th:text="'Atlanta Falcons'"></option>
+    		<option th:value="'BAL'" th:text="'Baltimore Ravens'"></option>
+    		<option th:value="'BUF'" th:text="'Buffalo Bills'"></option>
+    		<option th:value="'CAR'" th:text="'Carolina Panthers'"></option>
+    		<option th:value="'CHI'" th:text="'Chicago Bears'"></option>
+    		<option th:value="'CIN'" th:text="'Cincinnati Bengals'"></option>
+    		<option th:value="'CLE'" th:text="'Cleveland Browns'"></option>
+    		<option th:value="'DAL'" th:text="'Dallas Cowboys'"></option>
+    		<option th:value="'DEN'" th:text="'Denver Broncos'"></option>
+    		<option th:value="'DET'" th:text="'Detroit Lions'"></option>
+    		<option th:value="'GB'" th:text="'Green Bay Packers'"></option>
+    		<option th:value="'HOU'" th:text="'Houston Texans'"></option>
+    		<option th:value="'IND'" th:text="'Indianapolis Colts'"></option>
+    		<option th:value="'JAX'" th:text="'Jacksonville Jaguars'"></option>
+    		<option th:value="'KC'" th:text="'Kansas City Chiefs'"></option>
+    		<option th:value="'LAC'" th:text="'Los Angeles Chargers'"></option>
+    		<option th:value="'LAR'" th:text="'Los Angeles Rams'"></option>
+    		<option th:value="'MIA'" th:text="'Miami Dolphins'"></option>
+    		<option th:value="'MIN'" th:text="'Minnesota Vikings'"></option>
+    		<option th:value="'NE'" th:text="'New England Patriots'"></option>
+    		<option th:value="'NO'" th:text="'New Orleans Saints'"></option>
+    		<option th:value="'NYG'" th:text="'New York Giants'"></option>
+    		<option th:value="'NYJ'" th:text="'New York Jets'"></option>
+    		<option th:value="'OAK'" th:text="'Oakland Raiders'"></option>
+    		<option th:value="'PHI'" th:text="'Philadelphia Eagles'"></option>
+    		<option th:value="'PIT'" th:text="'Pittsburgh Steelers'"></option>
+    		<option th:value="'SEA'" th:text="'Seattle Seahawks'"></option>
+    		<option th:value="'SF'" th:text="'San Franscisco 49ers'"></option>
+    		<option th:value="'TB'" th:text="'Tampa Bay Buccaneers'"></option>
+    		<option th:value="'TEN'" th:text="'Tennessee Titans'"></option>
+    		<option th:value="'WAS'" th:text="'Washington Redskins'"></option>
+		</select></p>
+        <p>Week: <select th:field="*{week}" class="form-control">
+    		<option th:value="'1'" th:text="1"></option>
+    		<option th:value="'2'" th:text="2"></option>
+    		<option th:value="'3'" th:text="3"></option>
+    		<option th:value="'4'" th:text="4"></option>
+    		<option th:value="'5'" th:text="5"></option>
+    		<option th:value="'6'" th:text="6"></option>
+    		<option th:value="'7'" th:text="7"></option>
+    		<option th:value="'8'" th:text="8"></option>
+    		<option th:value="'9'" th:text="9"></option>
+    		<option th:value="'10'" th:text="10"></option>
+    		<option th:value="'11'" th:text="11"></option>
+    		<option th:value="'12'" th:text="12"></option>
+    		<option th:value="'13'" th:text="13"></option>
+    		<option th:value="'14'" th:text="14"></option>
+    		<option th:value="'15'" th:text="15"></option>
+    		<option th:value="'16'" th:text="16"></option>
+    		<option th:value="'17'" th:text="17"></option>
+		</select></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+    <p><a href="/standings">Standings</a></p>
 </body>
 </html>
