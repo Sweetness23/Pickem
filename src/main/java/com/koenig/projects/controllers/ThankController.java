@@ -2,7 +2,7 @@ package com.koenig.projects.controllers;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.koenig.projects.domain.Standings;
+import com.koenig.projects.domain.Standing;
 import com.koenig.projects.repo.StandingsRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;

@@ -7,5 +7,5 @@ import com.koenig.projects.domain.User;
 
 public interface UserRepository extends MongoRepository<User, Integer>{
 
-	User findFirstById(Integer id);
+	User findByNameIgnoreCaseAndEmailIgnoreCase(String name, String email);
 }

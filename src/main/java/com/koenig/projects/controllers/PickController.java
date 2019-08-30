@@ -1,7 +1,9 @@
 package com.koenig.projects.controllers;
 
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,19 +35,25 @@ public class PickController {
     @RequestMapping(method=RequestMethod.GET)
     public String greetingForm(Model model) {
         model.addAttribute("pick", new Pick());
-        model.addAttribute("userList", userRepo.findAll());
         return "submission";
     }
 
     @RequestMapping(method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute Pick pick) {
-    	String hash = pick.getTeam()+pick.getUserId()+pick.getWeek();
+    	pick.setDate(LocalDate.now());
+    	User user = userRepo.findByNameIgnoreCaseAndEmailIgnoreCase(pick.getUser().getName(), pick.getUser().getEmail());
+    	if(user == null) {
+    		String userHash = pick.getUser().getName() + pick.getUser().getEmail();
+    		pick.getUser().setId(userHash.hashCode());
+    		userRepo.save(pick.getUser());
+    	}else {
+    		pick.setUser(user);
+    	}
+    	String hash = pick.getTeam()+pick.getUser().getId()+pick.getWeek();
     	pick.setId(hash.hashCode());
-    	ZonedDateTime b = ZonedDateTime.now(ZoneId.of("America/Chicago"));
-    	pick.setDate(b);
     	pickRepo.save(pick);
     	SimpleMailMessage message = new SimpleMailMessage();
-        message.setTo(userRepo.findFirstById(pick.getUserId()).getEmail());
+        message.setTo(pick.getUser().getEmail());
         message.setSubject("Loser Pool Pick");
         message.setText("Your pick was: " + pick.getTeam() + " for week: " + pick.getWeek());
         mailSender.send(message);

@@ -6,8 +6,8 @@
       <a class="navbar-brand" href="/">Loser Pool</a>
     </div>
     <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home</a></li>
-      <li><a href="/submission">Submit</a></li>
+      <li><a href="/">Home</a></li>
+      <li class="active"><a href="/submission">Submit</a></li>
       <li><a href="/standings">Standings</a></li>
       <li><a href="/past">Past Champions</a></li>
     </ul>
@@ -23,11 +23,8 @@
 <body>
 	<h1>Submit your picks here</h1>
     <form method="post" th:object="${pick}">
-    	<p>Name <select th:field="*{userId}" class="form-control">
-             <option th:each="user : ${userList}"
-                             th:value="${user.id}"
-                             th:text="${user.name}" />
-         		</select>
+    	<p>Name <input type="text" th:field="*{user.name}" />
+		Email <input type="text" th:field="*{user.email}" />
     	</p>
     	
         <p>Losing Team <select th:field="*{team}" class="form-control">
@@ -83,7 +80,7 @@
     		<option th:value="'16'" th:text="16"></option>
     		<option th:value="'17'" th:text="17"></option>
 		</select></p>
-        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+        <p><input type="submit" class="btn btn-info" value="Submit" /> <input type="reset" class="btn btn-info" value="Reset" /></p>
     </form>
     <p><a href="/standings">Standings</a></p>
 </body>

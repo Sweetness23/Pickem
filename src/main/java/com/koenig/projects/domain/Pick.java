@@ -1,14 +1,14 @@
 package com.koenig.projects.domain;
 
-import java.time.ZonedDateTime;
+import java.time.LocalDate;
 
 public class Pick {
 
-	private Integer userId;
+	private Integer id;
+	private User user;
 	private String team;
 	private String week;
-	private Integer id;
-	private ZonedDateTime date;
+	private LocalDate date;
 	
 
 	public Pick() {
@@ -28,10 +28,10 @@ public class Pick {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	public ZonedDateTime getDate() {
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(ZonedDateTime date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 	public String getWeek() {
@@ -41,11 +41,11 @@ public class Pick {
 		this.week = week;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 }

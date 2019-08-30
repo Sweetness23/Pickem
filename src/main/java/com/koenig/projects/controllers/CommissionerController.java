@@ -5,19 +5,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import com.koenig.projects.repo.StandingsRepository;
+import com.koenig.projects.repo.PickRepository;
 
 @Controller
-@RequestMapping("/standings")
-public class StandingsController {
+@RequestMapping("/commissioner")
+public class CommissionerController {
 	
 	@Autowired
-	private StandingsRepository standingsRepo;
+	private PickRepository pickRepo;
 
-	@RequestMapping(method=RequestMethod.GET)
-    public String showStandings(Model model) {
-		model.addAttribute("standings", standingsRepo.findAll());
-        return "standings";
+    @RequestMapping(method=RequestMethod.GET)
+    public String greetingForm(Model model) {
+        model.addAttribute("picks", pickRepo.findAllByOrderByDateDesc());
+        return "commissioner";
     }
 
 }
