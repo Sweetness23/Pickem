@@ -23,6 +23,13 @@
 <body>
 	<h1>Standings</h1>
 	<table class="table table-striped table-bordered">
+		<thead class="thead-dark">
+			<tr>
+				<th>Name</th>
+				<th>Week 1</th>
+				<th>Total Correct</th>
+			</tr>
+		</thead>
 		<tr th:each="standing : ${standings}">
 			<td th:text="${standing.user.name}"></td>
 			<td th:each="pick : ${standing.picks}">
